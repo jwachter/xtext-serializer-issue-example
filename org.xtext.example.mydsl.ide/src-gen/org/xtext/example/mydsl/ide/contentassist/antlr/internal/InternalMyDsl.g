@@ -99,31 +99,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleReferedType
-entryRuleReferedType
-:
-{ before(grammarAccess.getReferedTypeRule()); }
-	 ruleReferedType
-{ after(grammarAccess.getReferedTypeRule()); } 
-	 EOF 
-;
-
-// Rule ReferedType
-ruleReferedType 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getReferedTypeAccess().getRefAssignment()); }
-		(rule__ReferedType__RefAssignment)
-		{ after(grammarAccess.getReferedTypeAccess().getRefAssignment()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__Root__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -427,9 +402,9 @@ rule__Root__RefAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getRootAccess().getRefReferedTypeParserRuleCall_2_0()); }
-		ruleReferedType
-		{ after(grammarAccess.getRootAccess().getRefReferedTypeParserRuleCall_2_0()); }
+		{ before(grammarAccess.getRootAccess().getRefSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getRootAccess().getRefSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -457,9 +432,9 @@ rule__AnEntry__KeyAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0()); }
-		ruleReferedType
-		{ after(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0()); }
+		{ before(grammarAccess.getAnEntryAccess().getKeySTRINGTerminalRuleCall_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getAnEntryAccess().getKeySTRINGTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -472,24 +447,9 @@ rule__AnEntry__ValueAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0()); }
-		ruleReferedType
-		{ after(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReferedType__RefAssignment
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getReferedTypeAccess().getRefSTRINGTerminalRuleCall_0()); }
+		{ before(grammarAccess.getAnEntryAccess().getValueSTRINGTerminalRuleCall_3_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getReferedTypeAccess().getRefSTRINGTerminalRuleCall_0()); }
+		{ after(grammarAccess.getAnEntryAccess().getValueSTRINGTerminalRuleCall_3_0()); }
 	)
 ;
 finally {

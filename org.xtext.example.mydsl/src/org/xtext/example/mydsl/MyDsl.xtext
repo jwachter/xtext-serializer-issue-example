@@ -3,15 +3,12 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 import "org.xtext.example.mydsl.model"
 
 Root:
-	'root' '(' ref=ReferedType ')' '{'
+	'root' '(' ref=STRING ')' '{'
 		entries+=AnEntry*
 	'}'
 ;
 	
 AnEntry:
-	'ref' key=ReferedType '@' value=ReferedType
+	'ref' key=STRING '@' value=STRING
 ;
 
-ReferedType: 
-	ref=STRING
-;

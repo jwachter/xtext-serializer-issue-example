@@ -27,7 +27,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRootKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRefAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRefReferedTypeParserRuleCall_2_0 = (RuleCall)cRefAssignment_2.eContents().get(0);
+		private final RuleCall cRefSTRINGTerminalRuleCall_2_0 = (RuleCall)cRefAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cEntriesAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -35,12 +35,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Root:
-		//	'root' '(' ref=ReferedType ')' '{'
+		//	'root' '(' ref=STRING ')' '{'
 		//	entries+=AnEntry*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'root' '(' ref=ReferedType ')' '{' entries+=AnEntry* '}'
+		//'root' '(' ref=STRING ')' '{' entries+=AnEntry* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'root'
@@ -49,11 +49,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//ref=ReferedType
+		//ref=STRING
 		public Assignment getRefAssignment_2() { return cRefAssignment_2; }
 		
-		//ReferedType
-		public RuleCall getRefReferedTypeParserRuleCall_2_0() { return cRefReferedTypeParserRuleCall_2_0; }
+		//STRING
+		public RuleCall getRefSTRINGTerminalRuleCall_2_0() { return cRefSTRINGTerminalRuleCall_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -75,56 +75,40 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRefKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cKeyAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cKeyReferedTypeParserRuleCall_1_0 = (RuleCall)cKeyAssignment_1.eContents().get(0);
+		private final RuleCall cKeySTRINGTerminalRuleCall_1_0 = (RuleCall)cKeyAssignment_1.eContents().get(0);
 		private final Keyword cCommercialAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueReferedTypeParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//AnEntry:
-		//	'ref' key=ReferedType '@' value=ReferedType;
+		//	'ref' key=STRING '@' value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ref' key=ReferedType '@' value=ReferedType
+		//'ref' key=STRING '@' value=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'ref'
 		public Keyword getRefKeyword_0() { return cRefKeyword_0; }
 		
-		//key=ReferedType
+		//key=STRING
 		public Assignment getKeyAssignment_1() { return cKeyAssignment_1; }
 		
-		//ReferedType
-		public RuleCall getKeyReferedTypeParserRuleCall_1_0() { return cKeyReferedTypeParserRuleCall_1_0; }
+		//STRING
+		public RuleCall getKeySTRINGTerminalRuleCall_1_0() { return cKeySTRINGTerminalRuleCall_1_0; }
 		
 		//'@'
 		public Keyword getCommercialAtKeyword_2() { return cCommercialAtKeyword_2; }
 		
-		//value=ReferedType
+		//value=STRING
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
-		//ReferedType
-		public RuleCall getValueReferedTypeParserRuleCall_3_0() { return cValueReferedTypeParserRuleCall_3_0; }
-	}
-	public class ReferedTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.ReferedType");
-		private final Assignment cRefAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cRefSTRINGTerminalRuleCall_0 = (RuleCall)cRefAssignment.eContents().get(0);
-		
-		//ReferedType:
-		//	ref=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//ref=STRING
-		public Assignment getRefAssignment() { return cRefAssignment; }
-		
 		//STRING
-		public RuleCall getRefSTRINGTerminalRuleCall_0() { return cRefSTRINGTerminalRuleCall_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_3_0() { return cValueSTRINGTerminalRuleCall_3_0; }
 	}
 	
 	
 	private final RootElements pRoot;
 	private final AnEntryElements pAnEntry;
-	private final ReferedTypeElements pReferedType;
 	
 	private final Grammar grammar;
 	
@@ -137,7 +121,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pRoot = new RootElements();
 		this.pAnEntry = new AnEntryElements();
-		this.pReferedType = new ReferedTypeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -168,7 +151,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Root:
-	//	'root' '(' ref=ReferedType ')' '{'
+	//	'root' '(' ref=STRING ')' '{'
 	//	entries+=AnEntry*
 	//	'}';
 	public RootElements getRootAccess() {
@@ -180,23 +163,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AnEntry:
-	//	'ref' key=ReferedType '@' value=ReferedType;
+	//	'ref' key=STRING '@' value=STRING;
 	public AnEntryElements getAnEntryAccess() {
 		return pAnEntry;
 	}
 	
 	public ParserRule getAnEntryRule() {
 		return getAnEntryAccess().getRule();
-	}
-	
-	//ReferedType:
-	//	ref=STRING;
-	public ReferedTypeElements getReferedTypeAccess() {
-		return pReferedType;
-	}
-	
-	public ParserRule getReferedTypeRule() {
-		return getReferedTypeAccess().getRule();
 	}
 	
 	//terminal ID:

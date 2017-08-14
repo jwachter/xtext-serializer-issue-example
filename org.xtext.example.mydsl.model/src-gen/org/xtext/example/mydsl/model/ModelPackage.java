@@ -68,7 +68,7 @@ public interface ModelPackage extends EPackage {
 	int ROOT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ref</b></em>' containment reference.
+	 * The feature id for the '<em><b>Ref</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,7 +114,7 @@ public interface ModelPackage extends EPackage {
 	int AN_ENTRY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' containment reference.
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface ModelPackage extends EPackage {
 	int AN_ENTRY__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -149,43 +149,6 @@ public interface ModelPackage extends EPackage {
 	 */
 	int AN_ENTRY_OPERATION_COUNT = 0;
 
-	/**
-	 * The meta object id for the '{@link org.xtext.example.mydsl.model.impl.ReferedTypeImpl <em>Refered Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.xtext.example.mydsl.model.impl.ReferedTypeImpl
-	 * @see org.xtext.example.mydsl.model.impl.ModelPackageImpl#getReferedType()
-	 * @generated
-	 */
-	int REFERED_TYPE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Ref</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERED_TYPE__REF = 0;
-
-	/**
-	 * The number of structural features of the '<em>Refered Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERED_TYPE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Refered Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERED_TYPE_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.xtext.example.mydsl.model.Root <em>Root</em>}'.
@@ -198,15 +161,15 @@ public interface ModelPackage extends EPackage {
 	EClass getRoot();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.model.Root#getRef <em>Ref</em>}'.
+	 * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.model.Root#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Ref</em>'.
+	 * @return the meta object for the attribute '<em>Ref</em>'.
 	 * @see org.xtext.example.mydsl.model.Root#getRef()
 	 * @see #getRoot()
 	 * @generated
 	 */
-	EReference getRoot_Ref();
+	EAttribute getRoot_Ref();
 
 	/**
 	 * Returns the meta object for the map '{@link org.xtext.example.mydsl.model.Root#getEntries <em>Entries</em>}'.
@@ -225,54 +188,33 @@ public interface ModelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>An Entry</em>'.
 	 * @see java.util.Map.Entry
-	 * @model keyType="org.xtext.example.mydsl.model.ReferedType" keyContainment="true"
-	 *        valueType="org.xtext.example.mydsl.model.ReferedType" valueContainment="true"
+	 * @model keyUnique="false" keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueUnique="false" valueDataType="org.eclipse.emf.ecore.EString"
 	 * @generated
 	 */
 	EClass getAnEntry();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Key</em>'.
+	 * @return the meta object for the attribute '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getAnEntry()
 	 * @generated
 	 */
-	EReference getAnEntry_Key();
+	EAttribute getAnEntry_Key();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getAnEntry()
 	 * @generated
 	 */
-	EReference getAnEntry_Value();
-
-	/**
-	 * Returns the meta object for class '{@link org.xtext.example.mydsl.model.ReferedType <em>Refered Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Refered Type</em>'.
-	 * @see org.xtext.example.mydsl.model.ReferedType
-	 * @generated
-	 */
-	EClass getReferedType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.model.ReferedType#getRef <em>Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref</em>'.
-	 * @see org.xtext.example.mydsl.model.ReferedType#getRef()
-	 * @see #getReferedType()
-	 * @generated
-	 */
-	EAttribute getReferedType_Ref();
+	EAttribute getAnEntry_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -308,12 +250,12 @@ public interface ModelPackage extends EPackage {
 		EClass ROOT = eINSTANCE.getRoot();
 
 		/**
-		 * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOT__REF = eINSTANCE.getRoot_Ref();
+		EAttribute ROOT__REF = eINSTANCE.getRoot_Ref();
 
 		/**
 		 * The meta object literal for the '<em><b>Entries</b></em>' map feature.
@@ -334,38 +276,20 @@ public interface ModelPackage extends EPackage {
 		EClass AN_ENTRY = eINSTANCE.getAnEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference AN_ENTRY__KEY = eINSTANCE.getAnEntry_Key();
+		EAttribute AN_ENTRY__KEY = eINSTANCE.getAnEntry_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference AN_ENTRY__VALUE = eINSTANCE.getAnEntry_Value();
-
-		/**
-		 * The meta object literal for the '{@link org.xtext.example.mydsl.model.impl.ReferedTypeImpl <em>Refered Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.xtext.example.mydsl.model.impl.ReferedTypeImpl
-		 * @see org.xtext.example.mydsl.model.impl.ModelPackageImpl#getReferedType()
-		 * @generated
-		 */
-		EClass REFERED_TYPE = eINSTANCE.getReferedType();
-
-		/**
-		 * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERED_TYPE__REF = eINSTANCE.getReferedType_Ref();
+		EAttribute AN_ENTRY__VALUE = eINSTANCE.getAnEntry_Value();
 
 	}
 

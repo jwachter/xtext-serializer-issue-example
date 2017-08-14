@@ -3,20 +3,17 @@
 package org.xtext.example.mydsl.model.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.model.ModelPackage;
-import org.xtext.example.mydsl.model.ReferedType;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,26 +29,46 @@ import org.xtext.example.mydsl.model.ReferedType;
  *
  * @generated
  */
-public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<ReferedType,ReferedType> {
+public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<String,String> {
 	/**
-	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' containment reference.
+	 * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReferedType key;
+	protected static final String KEY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
+	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypedKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String key = KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReferedType value;
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypedValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +94,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferedType getTypedKey() {
+	public String getTypedKey() {
 		return key;
 	}
 
@@ -86,14 +103,11 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypedKey(ReferedType newKey, NotificationChain msgs) {
-		ReferedType oldKey = key;
+	public void setTypedKey(String newKey) {
+		String oldKey = key;
 		key = newKey;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__KEY, oldKey, newKey);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__KEY, oldKey, key));
 	}
 
 	/**
@@ -101,26 +115,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypedKey(ReferedType newKey) {
-		if (newKey != key) {
-			NotificationChain msgs = null;
-			if (key != null)
-				msgs = ((InternalEObject)key).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.AN_ENTRY__KEY, null, msgs);
-			if (newKey != null)
-				msgs = ((InternalEObject)newKey).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.AN_ENTRY__KEY, null, msgs);
-			msgs = basicSetTypedKey(newKey, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__KEY, newKey, newKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReferedType getTypedValue() {
+	public String getTypedValue() {
 		return value;
 	}
 
@@ -129,49 +124,11 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypedValue(ReferedType newValue, NotificationChain msgs) {
-		ReferedType oldValue = value;
+	public void setTypedValue(String newValue) {
+		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__VALUE, oldValue, newValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTypedValue(ReferedType newValue) {
-		if (newValue != value) {
-			NotificationChain msgs = null;
-			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.AN_ENTRY__VALUE, null, msgs);
-			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.AN_ENTRY__VALUE, null, msgs);
-			msgs = basicSetTypedValue(newValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__VALUE, newValue, newValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ModelPackage.AN_ENTRY__KEY:
-				return basicSetTypedKey(null, msgs);
-			case ModelPackage.AN_ENTRY__VALUE:
-				return basicSetTypedValue(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__VALUE, oldValue, value));
 	}
 
 	/**
@@ -199,10 +156,10 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				setTypedKey((ReferedType)newValue);
+				setTypedKey((String)newValue);
 				return;
 			case ModelPackage.AN_ENTRY__VALUE:
-				setTypedValue((ReferedType)newValue);
+				setTypedValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,10 +174,10 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				setTypedKey((ReferedType)null);
+				setTypedKey(KEY_EDEFAULT);
 				return;
 			case ModelPackage.AN_ENTRY__VALUE:
-				setTypedValue((ReferedType)null);
+				setTypedValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -235,11 +192,29 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				return key != null;
+				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
 			case ModelPackage.AN_ENTRY__VALUE:
-				return value != null;
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (key: ");
+		result.append(key);
+		result.append(", value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
 	}
 
 	/**
@@ -276,7 +251,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferedType getKey() {
+	public String getKey() {
 		return getTypedKey();
 	}
 
@@ -285,7 +260,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKey(ReferedType key) {
+	public void setKey(String key) {
 		setTypedKey(key);
 	}
 
@@ -294,7 +269,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferedType getValue() {
+	public String getValue() {
 		return getTypedValue();
 	}
 
@@ -303,8 +278,8 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferedType setValue(ReferedType value) {
-		ReferedType oldValue = getValue();
+	public String setValue(String value) {
+		String oldValue = getValue();
 		setTypedValue(value);
 		return oldValue;
 	}
@@ -315,9 +290,9 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<ReferedType, ReferedType> getEMap() {
+	public EMap<String, String> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<ReferedType, ReferedType>)container.eGet(eContainmentFeature());
+		return container == null ? null : (EMap<String, String>)container.eGet(eContainmentFeature());
 	}
 
 } //AnEntryImpl

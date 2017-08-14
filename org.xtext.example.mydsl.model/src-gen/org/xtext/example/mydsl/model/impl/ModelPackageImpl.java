@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.model.ModelFactory;
 import org.xtext.example.mydsl.model.ModelPackage;
-import org.xtext.example.mydsl.model.ReferedType;
 import org.xtext.example.mydsl.model.Root;
 
 /**
@@ -37,13 +36,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EClass anEntryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass referedTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -123,8 +115,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoot_Ref() {
-		return (EReference)rootEClass.getEStructuralFeatures().get(0);
+	public EAttribute getRoot_Ref() {
+		return (EAttribute)rootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -150,8 +142,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnEntry_Key() {
-		return (EReference)anEntryEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAnEntry_Key() {
+		return (EAttribute)anEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -159,26 +151,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnEntry_Value() {
-		return (EReference)anEntryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReferedType() {
-		return referedTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReferedType_Ref() {
-		return (EAttribute)referedTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAnEntry_Value() {
+		return (EAttribute)anEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -210,15 +184,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Create classes and their features
 		rootEClass = createEClass(ROOT);
-		createEReference(rootEClass, ROOT__REF);
+		createEAttribute(rootEClass, ROOT__REF);
 		createEReference(rootEClass, ROOT__ENTRIES);
 
 		anEntryEClass = createEClass(AN_ENTRY);
-		createEReference(anEntryEClass, AN_ENTRY__KEY);
-		createEReference(anEntryEClass, AN_ENTRY__VALUE);
-
-		referedTypeEClass = createEClass(REFERED_TYPE);
-		createEAttribute(referedTypeEClass, REFERED_TYPE__REF);
+		createEAttribute(anEntryEClass, AN_ENTRY__KEY);
+		createEAttribute(anEntryEClass, AN_ENTRY__VALUE);
 	}
 
 	/**
@@ -255,15 +226,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoot_Ref(), this.getReferedType(), null, "ref", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRoot_Ref(), theEcorePackage.getEString(), "ref", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoot_Entries(), this.getAnEntry(), null, "entries", null, 0, -1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(anEntryEClass, Map.Entry.class, "AnEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnEntry_Key(), this.getReferedType(), null, "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnEntry_Value(), this.getReferedType(), null, "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(referedTypeEClass, ReferedType.class, "ReferedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReferedType_Ref(), theEcorePackage.getEString(), "ref", null, 0, 1, ReferedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnEntry_Key(), theEcorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnEntry_Value(), theEcorePackage.getEString(), "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

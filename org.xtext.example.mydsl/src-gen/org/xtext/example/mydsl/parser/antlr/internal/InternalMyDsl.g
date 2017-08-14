@@ -86,20 +86,19 @@ ruleRoot returns [EObject current=null]
 		}
 		(
 			(
+				lv_ref_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getRootAccess().getRefReferedTypeParserRuleCall_2_0());
+					newLeafNode(lv_ref_2_0, grammarAccess.getRootAccess().getRefSTRINGTerminalRuleCall_2_0());
 				}
-				lv_ref_2_0=ruleReferedType
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRootRule());
+						$current = createModelElement(grammarAccess.getRootRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"ref",
 						lv_ref_2_0,
-						"org.xtext.example.mydsl.MyDsl.ReferedType");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -159,20 +158,19 @@ ruleAnEntry returns [EObject current=null]
 		}
 		(
 			(
+				lv_key_1_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0());
+					newLeafNode(lv_key_1_0, grammarAccess.getAnEntryAccess().getKeySTRINGTerminalRuleCall_1_0());
 				}
-				lv_key_1_0=ruleReferedType
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAnEntryRule());
+						$current = createModelElement(grammarAccess.getAnEntryRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"key",
 						lv_key_1_0,
-						"org.xtext.example.mydsl.MyDsl.ReferedType");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -182,57 +180,21 @@ ruleAnEntry returns [EObject current=null]
 		}
 		(
 			(
+				lv_value_3_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0());
+					newLeafNode(lv_value_3_0, grammarAccess.getAnEntryAccess().getValueSTRINGTerminalRuleCall_3_0());
 				}
-				lv_value_3_0=ruleReferedType
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAnEntryRule());
+						$current = createModelElement(grammarAccess.getAnEntryRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"value",
 						lv_value_3_0,
-						"org.xtext.example.mydsl.MyDsl.ReferedType");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
-		)
-	)
-;
-
-// Entry rule entryRuleReferedType
-entryRuleReferedType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getReferedTypeRule()); }
-	iv_ruleReferedType=ruleReferedType
-	{ $current=$iv_ruleReferedType.current; }
-	EOF;
-
-// Rule ReferedType
-ruleReferedType returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_ref_0_0=RULE_STRING
-			{
-				newLeafNode(lv_ref_0_0, grammarAccess.getReferedTypeAccess().getRefSTRINGTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getReferedTypeRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"ref",
-					lv_ref_0_0,
-					"org.eclipse.xtext.common.Terminals.STRING");
-			}
 		)
 	)
 ;

@@ -37,7 +37,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRootAccess().getEntriesAssignment_5(), "rule__Root__EntriesAssignment_5");
 					put(grammarAccess.getAnEntryAccess().getKeyAssignment_1(), "rule__AnEntry__KeyAssignment_1");
 					put(grammarAccess.getAnEntryAccess().getValueAssignment_3(), "rule__AnEntry__ValueAssignment_3");
-					put(grammarAccess.getReferedTypeAccess().getRefAssignment(), "rule__ReferedType__RefAssignment");
 				}
 			};
 		}

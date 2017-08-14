@@ -25,35 +25,35 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Root extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Ref</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Ref</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ref</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Ref</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ref</em>' containment reference.
-	 * @see #setRef(ReferedType)
+	 * @return the value of the '<em>Ref</em>' attribute.
+	 * @see #setRef(String)
 	 * @see org.xtext.example.mydsl.model.ModelPackage#getRoot_Ref()
-	 * @model containment="true"
+	 * @model unique="false"
 	 * @generated
 	 */
-	ReferedType getRef();
+	String getRef();
 
 	/**
-	 * Sets the value of the '{@link org.xtext.example.mydsl.model.Root#getRef <em>Ref</em>}' containment reference.
+	 * Sets the value of the '{@link org.xtext.example.mydsl.model.Root#getRef <em>Ref</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ref</em>' containment reference.
+	 * @param value the new value of the '<em>Ref</em>' attribute.
 	 * @see #getRef()
 	 * @generated
 	 */
-	void setRef(ReferedType value);
+	void setRef(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Entries</b></em>' map.
-	 * The key is of type {@link org.xtext.example.mydsl.model.ReferedType},
-	 * and the value is of type {@link org.xtext.example.mydsl.model.ReferedType},
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link java.lang.String},
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entries</em>' map isn't clear,
@@ -62,9 +62,9 @@ public interface Root extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entries</em>' map.
 	 * @see org.xtext.example.mydsl.model.ModelPackage#getRoot_Entries()
-	 * @model mapType="org.xtext.example.mydsl.model.AnEntry&lt;org.xtext.example.mydsl.model.ReferedType, org.xtext.example.mydsl.model.ReferedType&gt;"
+	 * @model mapType="org.xtext.example.mydsl.model.AnEntry&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
 	 * @generated
 	 */
-	EMap<ReferedType, ReferedType> getEntries();
+	EMap<String, String> getEntries();
 
 } // Root

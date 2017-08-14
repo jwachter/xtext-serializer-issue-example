@@ -31,15 +31,6 @@ public interface ModelFactory extends EFactory {
 	Root createRoot();
 
 	/**
-	 * Returns a new object of class '<em>Refered Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Refered Type</em>'.
-	 * @generated
-	 */
-	ReferedType createReferedType();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

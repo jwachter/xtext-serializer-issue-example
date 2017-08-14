@@ -3,15 +3,11 @@ package org.xtext.example.mydsl.model
 import java.util.Map
 
 class Root {
-	contains ReferedType ref
+	String ref
 	contains AnEntry[] entries
 }
 
 class AnEntry wraps Map$Entry {
-	contains ReferedType key
-	contains ReferedType value
-}
-
-class ReferedType {
-	String ref
+	String key
+	String value
 }
