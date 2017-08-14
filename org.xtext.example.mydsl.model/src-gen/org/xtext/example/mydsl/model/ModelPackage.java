@@ -225,8 +225,8 @@ public interface ModelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>An Entry</em>'.
 	 * @see java.util.Map.Entry
-	 * @model keyType="org.xtext.example.mydsl.model.ReferedType"
-	 *        valueType="org.xtext.example.mydsl.model.ReferedType"
+	 * @model keyType="org.xtext.example.mydsl.model.ReferedType" keyResolveProxies="false"
+	 *        valueType="org.xtext.example.mydsl.model.ReferedType" valueResolveProxies="false"
 	 * @generated
 	 */
 	EClass getAnEntry();

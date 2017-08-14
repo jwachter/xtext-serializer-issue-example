@@ -9,7 +9,6 @@ import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -77,23 +76,6 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * @generated
 	 */
 	public ReferedType getTypedKey() {
-		if (key != null && key.eIsProxy()) {
-			InternalEObject oldKey = (InternalEObject)key;
-			key = (ReferedType)eResolveProxy(oldKey);
-			if (key != oldKey) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.AN_ENTRY__KEY, oldKey, key));
-			}
-		}
-		return key;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReferedType basicGetTypedKey() {
 		return key;
 	}
 
@@ -115,23 +97,6 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * @generated
 	 */
 	public ReferedType getTypedValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = (ReferedType)eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.AN_ENTRY__VALUE, oldValue, value));
-			}
-		}
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReferedType basicGetTypedValue() {
 		return value;
 	}
 
@@ -156,11 +121,9 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				if (resolve) return getTypedKey();
-				return basicGetTypedKey();
+				return getTypedKey();
 			case ModelPackage.AN_ENTRY__VALUE:
-				if (resolve) return getTypedValue();
-				return basicGetTypedValue();
+				return getTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

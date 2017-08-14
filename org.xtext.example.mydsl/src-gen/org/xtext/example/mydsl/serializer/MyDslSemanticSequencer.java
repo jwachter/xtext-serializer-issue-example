@@ -63,8 +63,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, ModelPackage.Literals.AN_ENTRY__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getAnEntryAccess().getKeyReferedTypeIDTerminalRuleCall_1_0_1(), semanticObject.eGet(ModelPackage.Literals.AN_ENTRY__KEY, false));
-		feeder.accept(grammarAccess.getAnEntryAccess().getValueReferedTypeIDTerminalRuleCall_3_0_1(), semanticObject.eGet(ModelPackage.Literals.AN_ENTRY__VALUE, false));
+		feeder.accept(grammarAccess.getAnEntryAccess().getKeyReferedTypeIDTerminalRuleCall_1_0_1(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getAnEntryAccess().getValueReferedTypeIDTerminalRuleCall_3_0_1(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
