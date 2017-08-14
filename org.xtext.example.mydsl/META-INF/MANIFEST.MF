@@ -10,5 +10,18 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.xtext.example.mydsl.model;bundle-version="0.1.0",
  org.eclipse.emf.ecore.xcore;bundle-version="1.5.0",
- org.eclipse.emf.ecore.xcore.lib;bundle-version="1.1.100"
+ org.eclipse.emf.ecore.xcore.lib;bundle-version="1.1.100",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.example.mydsl.parser.antlr.internal,
+ org.xtext.example.mydsl.scoping,
+ org.xtext.example.mydsl.services,
+ org.xtext.example.mydsl.generator,
+ org.xtext.example.mydsl.validation,
+ org.xtext.example.mydsl,
+ org.xtext.example.mydsl.serializer,
+ org.xtext.example.mydsl.parser.antlr
+Import-Package: org.apache.log4j
