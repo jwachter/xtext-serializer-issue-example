@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.model.ModelPackage;
+import org.xtext.example.mydsl.model.ReferedType;
 import org.xtext.example.mydsl.model.Root;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
@@ -36,6 +37,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case ModelPackage.AN_ENTRY:
 				sequence_AnEntry(context, (Map.Entry) semanticObject); 
 				return; 
+			case ModelPackage.REFERED_TYPE:
+				sequence_ReferedType(context, (ReferedType) semanticObject); 
+				return; 
 			case ModelPackage.ROOT:
 				sequence_Root(context, (Root) semanticObject); 
 				return; 
@@ -49,7 +53,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AnEntry returns AnEntry
 	 *
 	 * Constraint:
-	 *     (key=STRING value=STRING)
+	 *     (key=[ReferedType|ID] value=[ReferedType|ID])
 	 */
 	protected void sequence_AnEntry(ISerializationContext context, Map.Entry semanticObject) {
 		if (errorAcceptor != null) {
@@ -59,8 +63,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, ModelPackage.Literals.AN_ENTRY__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getAnEntryAccess().getKeySTRINGTerminalRuleCall_1_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getAnEntryAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAnEntryAccess().getKeyReferedTypeIDTerminalRuleCall_1_0_1(), semanticObject.eGet(ModelPackage.Literals.AN_ENTRY__KEY, false));
+		feeder.accept(grammarAccess.getAnEntryAccess().getValueReferedTypeIDTerminalRuleCall_3_0_1(), semanticObject.eGet(ModelPackage.Literals.AN_ENTRY__VALUE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ReferedType returns ReferedType
+	 *
+	 * Constraint:
+	 *     ref=STRING
+	 */
+	protected void sequence_ReferedType(ISerializationContext context, ReferedType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ModelPackage.Literals.REFERED_TYPE__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelPackage.Literals.REFERED_TYPE__REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getReferedTypeAccess().getRefSTRINGTerminalRuleCall_0(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
@@ -70,7 +92,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Root returns Root
 	 *
 	 * Constraint:
-	 *     (ref=STRING entries+=AnEntry*)
+	 *     (ref=ReferedType entries+=AnEntry*)
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

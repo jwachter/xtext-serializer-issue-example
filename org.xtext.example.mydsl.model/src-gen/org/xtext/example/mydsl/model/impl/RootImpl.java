@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.model.ModelPackage;
+import org.xtext.example.mydsl.model.ReferedType;
 import org.xtext.example.mydsl.model.Root;
 
 /**
@@ -36,24 +37,14 @@ import org.xtext.example.mydsl.model.Root;
  */
 public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	/**
-	 * The default value of the '{@link #getRef() <em>Ref</em>}' attribute.
+	 * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REF_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRef() <em>Ref</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRef()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ref = REF_EDEFAULT;
+	protected ReferedType ref;
 
 	/**
 	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' map.
@@ -63,7 +54,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<String, String> entries;
+	protected EMap<ReferedType, ReferedType> entries;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +80,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRef() {
+	public ReferedType getRef() {
 		return ref;
 	}
 
@@ -98,11 +89,14 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRef(String newRef) {
-		String oldRef = ref;
+	public NotificationChain basicSetRef(ReferedType newRef, NotificationChain msgs) {
+		ReferedType oldRef = ref;
 		ref = newRef;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOT__REF, oldRef, ref));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.ROOT__REF, oldRef, newRef);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -110,9 +104,28 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<String, String> getEntries() {
+	public void setRef(ReferedType newRef) {
+		if (newRef != ref) {
+			NotificationChain msgs = null;
+			if (ref != null)
+				msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.ROOT__REF, null, msgs);
+			if (newRef != null)
+				msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.ROOT__REF, null, msgs);
+			msgs = basicSetRef(newRef, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOT__REF, newRef, newRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EMap<ReferedType, ReferedType> getEntries() {
 		if (entries == null) {
-			entries = new EcoreEMap<String,String>(ModelPackage.Literals.AN_ENTRY, AnEntryImpl.class, this, ModelPackage.ROOT__ENTRIES);
+			entries = new EcoreEMap<ReferedType,ReferedType>(ModelPackage.Literals.AN_ENTRY, AnEntryImpl.class, this, ModelPackage.ROOT__ENTRIES);
 		}
 		return entries;
 	}
@@ -125,6 +138,8 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ModelPackage.ROOT__REF:
+				return basicSetRef(null, msgs);
 			case ModelPackage.ROOT__ENTRIES:
 				return ((InternalEList<?>)getEntries()).basicRemove(otherEnd, msgs);
 		}
@@ -157,7 +172,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ModelPackage.ROOT__REF:
-				setRef((String)newValue);
+				setRef((ReferedType)newValue);
 				return;
 			case ModelPackage.ROOT__ENTRIES:
 				((EStructuralFeature.Setting)getEntries()).set(newValue);
@@ -175,7 +190,7 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ModelPackage.ROOT__REF:
-				setRef(REF_EDEFAULT);
+				setRef((ReferedType)null);
 				return;
 			case ModelPackage.ROOT__ENTRIES:
 				getEntries().clear();
@@ -193,27 +208,11 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ModelPackage.ROOT__REF:
-				return REF_EDEFAULT == null ? ref != null : !REF_EDEFAULT.equals(ref);
+				return ref != null;
 			case ModelPackage.ROOT__ENTRIES:
 				return entries != null && !entries.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ref: ");
-		result.append(ref);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RootImpl

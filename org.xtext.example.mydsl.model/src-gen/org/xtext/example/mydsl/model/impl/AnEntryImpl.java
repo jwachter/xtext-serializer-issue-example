@@ -9,11 +9,13 @@ import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.model.ModelPackage;
+import org.xtext.example.mydsl.model.ReferedType;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,46 +31,26 @@ import org.xtext.example.mydsl.model.ModelPackage;
  *
  * @generated
  */
-public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<String,String> {
+public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<ReferedType,ReferedType> {
 	/**
-	 * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
+	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String KEY_EDEFAULT = null;
+	protected ReferedType key;
 
 	/**
-	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypedKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String key = KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypedValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
+	protected ReferedType value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +76,15 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTypedKey() {
+	public ReferedType getTypedKey() {
+		if (key != null && key.eIsProxy()) {
+			InternalEObject oldKey = (InternalEObject)key;
+			key = (ReferedType)eResolveProxy(oldKey);
+			if (key != oldKey) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.AN_ENTRY__KEY, oldKey, key));
+			}
+		}
 		return key;
 	}
 
@@ -103,8 +93,17 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypedKey(String newKey) {
-		String oldKey = key;
+	public ReferedType basicGetTypedKey() {
+		return key;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypedKey(ReferedType newKey) {
+		ReferedType oldKey = key;
 		key = newKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__KEY, oldKey, key));
@@ -115,7 +114,15 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTypedValue() {
+	public ReferedType getTypedValue() {
+		if (value != null && value.eIsProxy()) {
+			InternalEObject oldValue = (InternalEObject)value;
+			value = (ReferedType)eResolveProxy(oldValue);
+			if (value != oldValue) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.AN_ENTRY__VALUE, oldValue, value));
+			}
+		}
 		return value;
 	}
 
@@ -124,8 +131,17 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypedValue(String newValue) {
-		String oldValue = value;
+	public ReferedType basicGetTypedValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypedValue(ReferedType newValue) {
+		ReferedType oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.AN_ENTRY__VALUE, oldValue, value));
@@ -140,9 +156,11 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				return getTypedKey();
+				if (resolve) return getTypedKey();
+				return basicGetTypedKey();
 			case ModelPackage.AN_ENTRY__VALUE:
-				return getTypedValue();
+				if (resolve) return getTypedValue();
+				return basicGetTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,10 +174,10 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				setTypedKey((String)newValue);
+				setTypedKey((ReferedType)newValue);
 				return;
 			case ModelPackage.AN_ENTRY__VALUE:
-				setTypedValue((String)newValue);
+				setTypedValue((ReferedType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,10 +192,10 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				setTypedKey(KEY_EDEFAULT);
+				setTypedKey((ReferedType)null);
 				return;
 			case ModelPackage.AN_ENTRY__VALUE:
-				setTypedValue(VALUE_EDEFAULT);
+				setTypedValue((ReferedType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -192,29 +210,11 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ModelPackage.AN_ENTRY__KEY:
-				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+				return key != null;
 			case ModelPackage.AN_ENTRY__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return value != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (key: ");
-		result.append(key);
-		result.append(", value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 	/**
@@ -251,7 +251,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getKey() {
+	public ReferedType getKey() {
 		return getTypedKey();
 	}
 
@@ -260,7 +260,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKey(String key) {
+	public void setKey(ReferedType key) {
 		setTypedKey(key);
 	}
 
@@ -269,7 +269,7 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
+	public ReferedType getValue() {
 		return getTypedValue();
 	}
 
@@ -278,8 +278,8 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String setValue(String value) {
-		String oldValue = getValue();
+	public ReferedType setValue(ReferedType value) {
+		ReferedType oldValue = getValue();
 		setTypedValue(value);
 		return oldValue;
 	}
@@ -290,9 +290,9 @@ public class AnEntryImpl extends MinimalEObjectImpl.Container implements BasicEM
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<String, String> getEMap() {
+	public EMap<ReferedType, ReferedType> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<String, String>)container.eGet(eContainmentFeature());
+		return container == null ? null : (EMap<ReferedType, ReferedType>)container.eGet(eContainmentFeature());
 	}
 
 } //AnEntryImpl

@@ -74,8 +74,12 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createRootAdapter();
 			}
 			@Override
-			public Adapter caseAnEntry(Map.Entry<String, String> object) {
+			public Adapter caseAnEntry(Map.Entry<ReferedType, ReferedType> object) {
 				return createAnEntryAdapter();
+			}
+			@Override
+			public Adapter caseReferedType(ReferedType object) {
+				return createReferedTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -122,6 +126,20 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAnEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.model.ReferedType <em>Refered Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.example.mydsl.model.ReferedType
+	 * @generated
+	 */
+	public Adapter createReferedTypeAdapter() {
 		return null;
 	}
 

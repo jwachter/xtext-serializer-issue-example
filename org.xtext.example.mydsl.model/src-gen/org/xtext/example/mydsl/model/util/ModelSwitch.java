@@ -75,8 +75,14 @@ public class ModelSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case ModelPackage.AN_ENTRY: {
-				@SuppressWarnings("unchecked") Map.Entry<String, String> anEntry = (Map.Entry<String, String>)theEObject;
+				@SuppressWarnings("unchecked") Map.Entry<ReferedType, ReferedType> anEntry = (Map.Entry<ReferedType, ReferedType>)theEObject;
 				T result = caseAnEntry(anEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.REFERED_TYPE: {
+				ReferedType referedType = (ReferedType)theEObject;
+				T result = caseReferedType(referedType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -110,7 +116,22 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAnEntry(Map.Entry<String, String> object) {
+	public T caseAnEntry(Map.Entry<ReferedType, ReferedType> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Refered Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Refered Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReferedType(ReferedType object) {
 		return null;
 	}
 

@@ -60,6 +60,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eClass.getClassifierID()) {
 			case ModelPackage.ROOT: return createRoot();
 			case ModelPackage.AN_ENTRY: return (EObject)createAnEntry();
+			case ModelPackage.REFERED_TYPE: return createReferedType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,9 +81,19 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<String, String> createAnEntry() {
+	public Map.Entry<ReferedType, ReferedType> createAnEntry() {
 		AnEntryImpl anEntry = new AnEntryImpl();
 		return anEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReferedType createReferedType() {
+		ReferedTypeImpl referedType = new ReferedTypeImpl();
+		return referedType;
 	}
 
 	/**
