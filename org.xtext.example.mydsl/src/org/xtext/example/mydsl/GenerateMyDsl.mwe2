@@ -35,7 +35,7 @@ Workflow {
 
 			referencedResource = "platform:/resource/org.xtext.example.mydsl.model/model/mydsl.xcore"
 
-			serializer = {
+			serializer = CustomSerializer {
 				generateStub = false
 			}
 			validator = {
