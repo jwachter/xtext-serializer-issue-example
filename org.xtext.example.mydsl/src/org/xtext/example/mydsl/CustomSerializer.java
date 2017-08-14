@@ -10,7 +10,6 @@ public class CustomSerializer extends SerializerFragment2 {
 
 	@Override
 	public void generate() {
-		System.out.println("Generating stuff");
 		try {
 			Field fileAccessFactoryField = SerializerFragment2.class.getDeclaredField("fileAccessFactory");
 			fileAccessFactoryField.setAccessible(true);

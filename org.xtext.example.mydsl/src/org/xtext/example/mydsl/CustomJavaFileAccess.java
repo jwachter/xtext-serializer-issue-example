@@ -27,9 +27,6 @@ public class CustomJavaFileAccess extends JavaFileAccess {
 	
 	@Override
 	public String getContentString() {
-		if(typeRef.getSimpleName().endsWith("SemanticSequencer")) {
-			System.out.println("Something semantic");
-		}
 		return super.getContentString();
 	}
 
