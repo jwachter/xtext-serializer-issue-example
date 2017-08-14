@@ -33,6 +33,8 @@ Workflow {
 			name = "org.xtext.example.mydsl.MyDsl"
 			fileExtensions = "mydsl"
 
+			referencedResource = "platform:/resource/org.xtext.example.mydsl.model/model/mydsl.xcore"
+
 			serializer = {
 				generateStub = false
 			}

@@ -1,9 +1,17 @@
 grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 
-generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+import "org.xtext.example.mydsl.model"
 
-Model:
-	greetings+=Greeting*;
+Root:
+	'root' '(' ref=ReferedType ')' '{'
+		entries+=AnEntry*
+	'}'
+;
 	
-Greeting:
-	'Hello' name=ID '!';
+AnEntry:
+	'ref' key=[ReferedType] '@' value=[ReferedType]
+;
+
+ReferedType: 
+	ref=STRING
+;
