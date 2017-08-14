@@ -1,1 +1,17 @@
 package org.xtext.example.mydsl.model
+
+import java.util.Map
+
+class Root {
+	contains ReferedType ref
+	contains AnEntry[] entries
+}
+
+class AnEntry wraps Map$Entry {
+	refers ReferedType key
+	refers ReferedType value
+}
+
+class ReferedType {
+	String ref
+}

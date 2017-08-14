@@ -6,4 +6,12 @@
 
 <plugin>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mydsl -->
+      <package
+            uri="org.xtext.example.mydsl.model"
+            class="org.xtext.example.mydsl.model.ModelPackage"
+            genModel="model/mydsl.xcore"/>
+   </extension>
+
 </plugin>
