@@ -160,13 +160,19 @@ ruleAnEntry returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnEntryRule());
-					}
+					newCompositeNode(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0());
 				}
-				otherlv_1=RULE_ID
+				lv_key_1_0=ruleReferedType
 				{
-					newLeafNode(otherlv_1, grammarAccess.getAnEntryAccess().getKeyReferedTypeCrossReference_1_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAnEntryRule());
+					}
+					set(
+						$current,
+						"key",
+						lv_key_1_0,
+						"org.xtext.example.mydsl.MyDsl.ReferedType");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -177,13 +183,19 @@ ruleAnEntry returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnEntryRule());
-					}
+					newCompositeNode(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0());
 				}
-				otherlv_3=RULE_ID
+				lv_value_3_0=ruleReferedType
 				{
-					newLeafNode(otherlv_3, grammarAccess.getAnEntryAccess().getValueReferedTypeCrossReference_3_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAnEntryRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_3_0,
+						"org.xtext.example.mydsl.MyDsl.ReferedType");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

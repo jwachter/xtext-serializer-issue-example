@@ -9,7 +9,7 @@ Root:
 ;
 	
 AnEntry:
-	'ref' key=[ReferedType] '@' value=[ReferedType]
+	'ref' key=ReferedType '@' value=ReferedType
 ;
 
 ReferedType: 

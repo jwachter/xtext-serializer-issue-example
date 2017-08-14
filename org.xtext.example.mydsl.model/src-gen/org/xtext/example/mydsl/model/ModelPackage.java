@@ -114,7 +114,7 @@ public interface ModelPackage extends EPackage {
 	int AN_ENTRY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * The feature id for the '<em><b>Key</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface ModelPackage extends EPackage {
 	int AN_ENTRY__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -225,17 +225,17 @@ public interface ModelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>An Entry</em>'.
 	 * @see java.util.Map.Entry
-	 * @model keyType="org.xtext.example.mydsl.model.ReferedType" keyResolveProxies="false"
-	 *        valueType="org.xtext.example.mydsl.model.ReferedType" valueResolveProxies="false"
+	 * @model keyType="org.xtext.example.mydsl.model.ReferedType" keyContainment="true"
+	 *        valueType="org.xtext.example.mydsl.model.ReferedType" valueContainment="true"
 	 * @generated
 	 */
 	EClass getAnEntry();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @return the meta object for the containment reference '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getAnEntry()
 	 * @generated
@@ -243,10 +243,10 @@ public interface ModelPackage extends EPackage {
 	EReference getAnEntry_Key();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getAnEntry()
 	 * @generated
@@ -334,7 +334,7 @@ public interface ModelPackage extends EPackage {
 		EClass AN_ENTRY = eINSTANCE.getAnEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Key</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -342,7 +342,7 @@ public interface ModelPackage extends EPackage {
 		EReference AN_ENTRY__KEY = eINSTANCE.getAnEntry_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

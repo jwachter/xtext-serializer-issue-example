@@ -53,7 +53,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AnEntry returns AnEntry
 	 *
 	 * Constraint:
-	 *     (key=[ReferedType|ID] value=[ReferedType|ID])
+	 *     (key=ReferedType value=ReferedType)
 	 */
 	protected void sequence_AnEntry(ISerializationContext context, Map.Entry semanticObject) {
 		if (errorAcceptor != null) {
@@ -63,8 +63,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, ModelPackage.Literals.AN_ENTRY__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getAnEntryAccess().getKeyReferedTypeIDTerminalRuleCall_1_0_1(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getAnEntryAccess().getValueReferedTypeIDTerminalRuleCall_3_0_1(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

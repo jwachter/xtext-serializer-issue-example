@@ -8,10 +8,8 @@ class Root {
 }
 
 class AnEntry wraps Map$Entry {
-	@Ecore(resolveProxies="false")
-	refers ReferedType key
-	@Ecore(resolveProxies="false")
-	refers ReferedType value
+	contains ReferedType key
+	contains ReferedType value
 }
 
 class ReferedType {

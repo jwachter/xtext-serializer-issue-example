@@ -457,13 +457,9 @@ rule__AnEntry__KeyAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getAnEntryAccess().getKeyReferedTypeCrossReference_1_0()); }
-		(
-			{ before(grammarAccess.getAnEntryAccess().getKeyReferedTypeIDTerminalRuleCall_1_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getAnEntryAccess().getKeyReferedTypeIDTerminalRuleCall_1_0_1()); }
-		)
-		{ after(grammarAccess.getAnEntryAccess().getKeyReferedTypeCrossReference_1_0()); }
+		{ before(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0()); }
+		ruleReferedType
+		{ after(grammarAccess.getAnEntryAccess().getKeyReferedTypeParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -476,13 +472,9 @@ rule__AnEntry__ValueAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getAnEntryAccess().getValueReferedTypeCrossReference_3_0()); }
-		(
-			{ before(grammarAccess.getAnEntryAccess().getValueReferedTypeIDTerminalRuleCall_3_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getAnEntryAccess().getValueReferedTypeIDTerminalRuleCall_3_0_1()); }
-		)
-		{ after(grammarAccess.getAnEntryAccess().getValueReferedTypeCrossReference_3_0()); }
+		{ before(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0()); }
+		ruleReferedType
+		{ after(grammarAccess.getAnEntryAccess().getValueReferedTypeParserRuleCall_3_0()); }
 	)
 ;
 finally {
